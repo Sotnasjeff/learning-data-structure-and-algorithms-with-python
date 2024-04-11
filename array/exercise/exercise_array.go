@@ -6,7 +6,7 @@ func main() {
 	fmt.Println(reverse("Hello World"))
 
 	first := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
-	second := []int{4, 4, 6}
+	second := []int{4, 4, 6, 22}
 
 	fmt.Println(mergeSortedArray(first, second))
 }
@@ -31,22 +31,12 @@ func mergeSortedArray(first, second []int) []int {
 	j := 0
 
 	for i < len(first) && j < len(second) {
-		if len(first) <= len(second) {
-			if first[i] < second[j] {
-				result = append(result, first[i])
-				i++
-			} else {
-				result = append(result, second[j])
-				j++
-			}
+		if first[i] < second[j] {
+			result = append(result, first[i])
+			i++
 		} else {
-			if second[j] < first[i] {
-				result = append(result, second[j])
-				j++
-			} else {
-				result = append(result, first[i])
-				i++
-			}
+			result = append(result, second[j])
+			j++
 		}
 	}
 

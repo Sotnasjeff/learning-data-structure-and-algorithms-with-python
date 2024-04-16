@@ -4,11 +4,23 @@ import (
 	"fmt"
 
 	"github.com/Sotnasjeff/learning-data-structure-and-algorithms-with-golang/array"
+	hashtable "github.com/Sotnasjeff/learning-data-structure-and-algorithms-with-golang/hash_table"
 )
 
 func main() {
 	fmt.Println("Hello World")
 	testingArray()
+	testingHashTable()
+}
+
+func testingHashTable() {
+	myHashTable := hashtable.NewHashTable()
+	myHashTable.Add(5, "amor")
+	myHashTable.Add(4, true)
+	myHashTable.Add(0, 2024)
+	fmt.Println(myHashTable)
+	fmt.Println(myHashTable.Get(5))
+
 }
 
 func testingArray() {

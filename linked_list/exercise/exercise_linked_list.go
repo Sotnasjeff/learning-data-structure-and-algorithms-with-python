@@ -9,13 +9,17 @@ import (
 func main() {
 
 	myLinkedList := linkedlist.LinkedList{}
-	myLinkedList.Insert(5)
-	myLinkedList.Insert(10)
-	myLinkedList.Insert(6)
-	myLinkedList.Insert(9)
-	myLinkedList.InsertByIndex(2, 99)
-	myLinkedList.InsertByIndex(0, 100000)
+	myLinkedList.Append(5)
+	myLinkedList.Prepend(10)
+	myLinkedList.Append(6)
+	myLinkedList.Prepend(9)
+	myLinkedList.Append(50)
+	myLinkedList.Prepend(0)
+	myLinkedList.Append(99)
+	myLinkedList.InsertByIndex(0, 5555)
 
 	fmt.Println(myLinkedList.Length)
 	fmt.Println(myLinkedList.PrintList())
+
+	fmt.Println(myLinkedList.GetByIndex(2))
 }

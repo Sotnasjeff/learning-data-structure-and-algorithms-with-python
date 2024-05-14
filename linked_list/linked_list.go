@@ -10,7 +10,7 @@ type LinkedList struct {
 	Length int
 }
 
-func (ll *LinkedList) Insert(value int) {
+func (ll *LinkedList) Append(value int) {
 	newNode := &Node{
 		Value: value,
 		Next:  nil,
@@ -29,24 +29,54 @@ func (ll *LinkedList) Insert(value int) {
 	ll.Length++
 }
 
+func (ll *LinkedList) Prepend(value int) {
+	newNode := &Node{
+		Value: value,
+		Next:  nil,
+	}
+
+	newNode.Next = ll.Head
+	ll.Head = newNode
+	ll.Length++
+}
+
 func (ll *LinkedList) InsertByIndex(index, value int) {
 	newNode := &Node{
 		Value: value,
 		Next:  nil,
 	}
 
-	leader := ll.traverseToIndex(index - 1)
-
-	holdingPoint := leader.Next
-	leader.Next = newNode
-	newNode.Next = holdingPoint
-	ll.Length++
+	if index == 0 {
+		ll.Prepend(value)
+	} else {
+		currentNode := ll.GetByIndex(index - 1)
+		currentNextNode := currentNode.Next
+		newNode.Next = currentNextNode
+		currentNode.Next = newNode
+		ll.Length++
+	}
 }
 
-func (ll *LinkedList) traverseToIndex(index int) *Node {
-	counter := 0
+func (ll *LinkedList) Remove(index int) {
+	if index == 0 {
+		nextNode := ll.Head.Next
+		ll.Head = nextNode
+		ll.Length--
+	} else {
+		if index > ll.Length {
+			index = ll.Length - 1
+		}
+		currentNode := ll.GetByIndex(index - 1)
+		unwantedNode := currentNode.Next
+		currentNode.Next = unwantedNode.Next
+		ll.Length--
+	}
+}
+
+func (ll *LinkedList) GetByIndex(index int) *Node {
 	currentNode := ll.Head
-	for counter != index && currentNode.Next != nil {
+	counter := 0
+	for index != counter && currentNode.Next != nil {
 		currentNode = currentNode.Next
 		counter++
 	}

@@ -1,6 +1,6 @@
 # Learning Data Structure and Algorithms With Golang
 
-This is a repository in order to apply the knowledges gained throught the book: 'Learn Data Structures and Algorithms with Golang- Level up your Go programming skills to develop faster and more efficient code'
+This is a repository in order to apply the knowledges gained throught the course: [ZTM] Master the Coding Interview: Data Structures + Algorithms
 
 ### 📋 Prerequirements
 

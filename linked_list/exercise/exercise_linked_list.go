@@ -20,6 +20,8 @@ func main() {
 
 	fmt.Println(myLinkedList.Length)
 	fmt.Println(myLinkedList.PrintList())
+	myLinkedList.Reverse()
+	fmt.Println(myLinkedList.PrintList())
 
-	fmt.Println(myLinkedList.GetByIndex(2))
+	//fmt.Println(myLinkedList.GetByIndex(2))
 }

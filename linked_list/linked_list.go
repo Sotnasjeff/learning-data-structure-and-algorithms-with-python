@@ -93,3 +93,19 @@ func (ll *LinkedList) PrintList() []int {
 	}
 	return array
 }
+
+func (ll *LinkedList) Reverse() {
+	var previous = &Node{}
+	previous = nil
+	var next = &Node{}
+	current := ll.Head
+
+	for current != nil {
+		next = current.Next
+		current.Next = previous
+		previous = current
+		current = next
+	}
+
+	ll.Head = previous
+}

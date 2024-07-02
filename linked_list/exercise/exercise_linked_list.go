@@ -16,7 +16,7 @@ func main() {
 	myLinkedList.Append(50)
 	myLinkedList.Prepend(0)
 	myLinkedList.Append(99)
-	myLinkedList.InsertByIndex(0, 5555)
+	myLinkedList.InsertByIndex(50, 5555)
 
 	fmt.Println(myLinkedList.Length)
 	fmt.Println(myLinkedList.PrintList())

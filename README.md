@@ -1,6 +1,6 @@
 # Learning Data Structure and Algorithms With Golang
 
-This is a repository in order to apply the knowledges gained throught the course: [ZTM] Master the Coding Interview: Data Structures + Algorithms
+This is a repository in order to apply the knowledges gained throught the course: Estrutura de dados e algoritmos + Leetcode
 
 ### 📋 Prerequirements
 

@@ -1,17 +1,17 @@
-def reverseWords(s: str) -> str:
-    res = ''
-    l, r = 0,0
+def reverseWords(sentence: str) -> str:
+    response = ''
+    left, right = 0,0
 
-    while r < len(s):
-        if s[r] != ' ':
-            r += 1
+    while right < len(sentence):
+        if sentence[right] != ' ':
+            right += 1
         else:
-            res += s[l:r+1][::-1]
-            r += 1
-            l = r
-    res += ' '
-    res += s[l:r + 2][::-1]
-    return res[1:]
+            response += sentence[left:right+1][::-1]
+            right += 1
+            left = right
+    response += ' '
+    response += sentence[left:right + 2][::-1]
+    return response[1:]
 
 def invertWords(s: str) -> str:
     left, right = 0,len(s) - 1

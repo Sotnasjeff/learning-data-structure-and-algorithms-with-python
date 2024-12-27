@@ -24,4 +24,4 @@ def invertWords(s: str) -> str:
     
     return ''.join(convert_to_list)
 
-print(invertWords("jessica"))
+print(invertWords("jefferson"))

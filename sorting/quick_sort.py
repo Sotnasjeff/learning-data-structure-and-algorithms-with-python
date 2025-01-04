@@ -26,7 +26,6 @@ def partition(arr, left, right):
 
     return i+1
 
-from typing import List
 
 
 

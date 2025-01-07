@@ -37,8 +37,7 @@ class BinaryTree:
             return False
         if node.data == data:
             return True
-        
-        elif data < node.data:
+        elif node.data < data:
             return self._search_recursive(node.left, data)
         else:
             return self._search_recursive(node.right, data)
@@ -98,8 +97,8 @@ class BinaryTree:
         left = self.reverse_binary_tree(self.root.right)
         right = self.reverse_binary_tree(self.root.left)
 
-        self.root.left = right
-        self.root.right = left
+        self.root.left = left
+        self.root.right = right
 
     # DFS - Depth First Search - Profundidade
     def dfs_implementation(self, data) -> bool:
@@ -192,3 +191,4 @@ print("--------------------------------------------------------")
 print("bfs", my_binary.bfs_implementation(18))
 print("--------------------------------------------------------")
 print("dfs", my_binary.dfs_implementation(18))
+print()

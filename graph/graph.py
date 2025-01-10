@@ -115,23 +115,26 @@ def canFinish(numCourses:int, prerequisites: List[List[int]]) -> bool:
     return True
 
 def numIslands(grid: List[List[str]]) -> int:
-    m = len(grid)
-    n = len(grid[0])
-    def dfs(i, j):
-        if i < 0 or i >= m or j < 0 or j >= n or grid[i][j] == '0':
-            return
-        grid[i][j] = '0'
-        dfs(i + 1, j)
-        dfs(i - 1, j)
-        dfs(i, j + 1)
-        dfs(i, j - 1)
-    ans = 0
-    for i in range(m):
-        for j in range(n):
-            if grid[i][j] == '1':
-                ans += 1
-                dfs(i, j)
-    return ans
+	grid_size = len(grid)
+	width = len(grid[0])
+	
+	num_of_island = 0
+	for i in range(grid_size):
+		for j in range(width):
+			if grid[i][j] == '1':
+				num_of_island += 1
+				dfs(i,j,grid_size, width, grid)
+	
+	return num_of_island
+
+def dfs (i,j, grid_size, width, grid):
+	if i < 0 or i >= grid_size or j < 0 or j >= width or grid[i][j] == '0':
+		return
+	grid[i][j] = '0'
+	dfs(i + 1, j, grid_size, width, grid)
+	dfs(i - 1, j, grid_size, width, grid)
+	dfs(i, j + 1, grid_size, width, grid)
+	dfs(i, j - 1, grid_size, width, grid)
 
 #graph = {
 #    'A': {'B':1, 'C':4},
@@ -145,3 +148,9 @@ def numIslands(grid: List[List[str]]) -> int:
 times = [[2,1,1],[2,3,1],[3,4,1]]
 
 print(networkDelayTime(times, 4, 2))
+grid = [["1","1","1","1","1","0"],
+        ["1","1","1","0","0","1"],
+        ["1","1","1","0","0","1"],
+        ["0","0","0","1","0","0"]
+        ]
+print(numIslands(grid))

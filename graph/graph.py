@@ -87,6 +87,7 @@ def networkDelayTime(times: List[List[int]], n: int, k:int) -> int:
 
     return _max
 
+#Topological sort - NEED TO GET THIS ONE ASAP
 def canFinish(numCourses:int, prerequisites: List[List[int]]) -> bool:
     table = {i:[] for i in range(numCourses)}
 

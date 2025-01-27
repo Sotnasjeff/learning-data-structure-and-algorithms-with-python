@@ -26,5 +26,5 @@ def letterCombinations(digits: str) -> List[str]:
         for letter in phone_keyboard[digits[pointer]]:
             backtracking(permutation+letter, pointer+1)
                     
-    backtracking("", digits, pointer)
+    backtracking("", pointer)
     return res
